@@ -1,8 +1,13 @@
-package com.example.baiyuanwei.nicecopy;
+package com.example.baiyuanwei.nicecopy.activity;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
+import com.example.baiyuanwei.nicecopy.R;
+
+import org.androidannotations.annotations.EActivity;
+
+@EActivity
 public class MainActivity extends AppCompatActivity {
 
     @Override

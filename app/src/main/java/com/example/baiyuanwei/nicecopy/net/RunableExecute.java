@@ -1,8 +1,9 @@
 package com.example.baiyuanwei.nicecopy.net;
 
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.util.Map;
 
 /**
  * Created by baiyuanwei on 16/8/14.
@@ -11,12 +12,12 @@ public class RunableExecute implements Runnable {
 
     private String urlStr;
     private String method;
-    private Map<String, String> params;
+    private byte[] data;
 
-    public RunableExecute(String url, String method, Map<String, String> params) {
+    public RunableExecute(String url, String method, byte[] data) {
         this.urlStr = url;
         this.method = method;
-        this.params = params;
+        this.data = data;
     }
 
     @Override
@@ -37,6 +38,14 @@ public class RunableExecute implements Runnable {
             urlConnection.setReadTimeout(8000);
             urlConnection.setRequestProperty("Accept", "application/json");
             urlConnection.setRequestProperty("Content-type", "application/json");
+
+            OutputStream outputStream = urlConnection.getOutputStream();
+            outputStream.write(data);
+            int response = urlConnection.getResponseCode();
+            if (response == HttpURLConnection.HTTP_OK) {
+                InputStream inputStream = urlConnection.getInputStream();
+
+            }
 
 
 
