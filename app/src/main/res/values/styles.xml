@@ -8,4 +8,6 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="ProgressbarStyle" parent="android:Widget.Holo.Light.ProgressBar.Small"></style>
+
 </resources>

@@ -1,10 +1,9 @@
 package com.example.baiyuanwei.nicecopy.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.text.TextUtils;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import com.example.baiyuanwei.nicecopy.R;
 import com.example.baiyuanwei.nicecopy.base.BaseActivity;
@@ -36,10 +35,13 @@ public class LoginActivity extends BaseActivity {
         String account = accountEdit.getText().toString().trim();
         String password = passwordEdit.getText().toString().trim();
 
-        if (TextUtils.isEmpty(account) || TextUtils.isEmpty(password)) {
-            Toast.makeText(LoginActivity.this, "请输入登录信息", Toast.LENGTH_SHORT).show();
-        } else {
+//        if (TextUtils.isEmpty(account) || TextUtils.isEmpty(password)) {
+//            Toast.makeText(LoginActivity.this, "请输入登录信息", Toast.LENGTH_SHORT).show();
+//        } else {
+//
+//        }
 
-        }
+        Intent intent = MainActivity_.intent(this).get();
+        startActivity(intent);
     }
 }
