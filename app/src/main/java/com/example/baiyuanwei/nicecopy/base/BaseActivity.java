@@ -30,4 +30,9 @@ public class BaseActivity extends FragmentActivity implements IScrollable {
     public boolean isScroll() {
         return isScrolling;
     }
+
+    @Override
+    public void onBackPressed() {
+        finish();
+    }
 }

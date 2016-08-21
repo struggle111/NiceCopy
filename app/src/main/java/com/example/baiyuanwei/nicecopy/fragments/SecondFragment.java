@@ -18,24 +18,24 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by baiyuanwei on 16/8/19.
+ * Created by baiyuanwei on 16/8/21.
  */
 @EFragment
-public class FirstFragment extends ListFragment {
+public class SecondFragment extends ListFragment {
 
+    private WeakReference<Context> mContextWeakReference;
     private List<String> datas = new ArrayList<>();
     private NormalFragmentAdapter adapter;
-    private WeakReference<Context> contextWeakReference;
 
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        contextWeakReference = new WeakReference<Context>(context);
+        mContextWeakReference = new WeakReference<Context>(context);
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.first_list_fragment, container, false);
+        View view = LayoutInflater.from(mContextWeakReference.get()).inflate(R.layout.second_list_fragment, container, false);
         return view;
     }
 
@@ -43,13 +43,13 @@ public class FirstFragment extends ListFragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addData();
-        adapter = new NormalFragmentAdapter(contextWeakReference.get(), datas);
+        adapter = new NormalFragmentAdapter(mContextWeakReference.get(), datas);
         setListAdapter(adapter);
     }
 
     private void addData() {
         for (int i = 0; i < 20; i++) {
-            datas.add("第一个listFragment: " + i);
+            datas.add("第二个listFragment: " + i);
         }
     }
 }

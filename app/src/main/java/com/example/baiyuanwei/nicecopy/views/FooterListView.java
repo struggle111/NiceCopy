@@ -1,4 +1,4 @@
-package com.example.baiyuanwei.nicecopy;
+package com.example.baiyuanwei.nicecopy.views;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.AbsListView;
 import android.widget.ListView;
 
+import com.example.baiyuanwei.nicecopy.R;
 import com.example.baiyuanwei.nicecopy.interfaces.IScrollable;
 
 import java.lang.ref.WeakReference;
@@ -16,9 +17,9 @@ import java.lang.ref.WeakReference;
  * Created by baiyuanwei on 16/8/19.
  */
 
-public class NiceCopyListView extends ListView {
+public class FooterListView extends ListView {
 
-    private final static String TAG = NiceCopyListView.class.getSimpleName();
+    private final static String TAG = FooterListView.class.getSimpleName();
 
     private View footerView;
 
@@ -56,17 +57,17 @@ public class NiceCopyListView extends ListView {
         }
     };
 
-    public NiceCopyListView(Context context) {
+    public FooterListView(Context context) {
         super(context);
         init(context);
     }
 
-    public NiceCopyListView(Context context, AttributeSet attrs) {
+    public FooterListView(Context context, AttributeSet attrs) {
         super(context, attrs);
         init(context);
     }
 
-    public NiceCopyListView(Context context, AttributeSet attrs, int defStyleAttr) {
+    public FooterListView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init(context);
     }

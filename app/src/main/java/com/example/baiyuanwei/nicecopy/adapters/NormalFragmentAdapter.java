@@ -16,12 +16,12 @@ import java.util.List;
  * Created by baiyuanwei on 16/8/19.
  */
 
-public class FirstFragmentAdapter extends BaseAdapter {
+public class NormalFragmentAdapter extends BaseAdapter {
 
     private WeakReference<Context> contextWeakReference;
     private List<String> datas;
 
-    public FirstFragmentAdapter(Context context, List<String> datas) {
+    public NormalFragmentAdapter(Context context, List<String> datas) {
         this.contextWeakReference = new WeakReference<Context>(context);
         this.datas = datas;
     }
