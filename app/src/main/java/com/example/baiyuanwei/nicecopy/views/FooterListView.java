@@ -46,12 +46,10 @@ public class FooterListView extends ListView {
         public void onScroll(AbsListView absListView, int i, int i1, int i2) {
 
             if (isFooterViewShow) {
-
                 //只有一页不显示footer
                 if (i1 == i2) {
                     hideFooterView();
                 } else {
-
                 }
             }
         }

@@ -1,13 +1,13 @@
 package com.example.baiyuanwei.nicecopy.adapters;
 
 import android.content.Context;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.example.baiyuanwei.nicecopy.R;
+import com.example.baiyuanwei.nicecopy.views.SlideLayout_;
 
 import java.lang.ref.WeakReference;
 import java.util.List;
@@ -30,10 +30,12 @@ public class NormalFragmentAdapter extends BaseAdapter {
     public View getView(int i, View view, ViewGroup viewGroup) {
         FirstViewHolder viewHolder;
         if (null == view) {
-            view = LayoutInflater.from(contextWeakReference.get()).inflate(R.layout.first_list_fragment_item, viewGroup, false);
+//            view = LayoutInflater.from(contextWeakReference.get()).inflate(R.layout.first_list_fragment_item, viewGroup, false);
+
+            view = SlideLayout_.build(viewGroup.getContext());
             viewHolder = new FirstViewHolder();
 
-            viewHolder.textView = (TextView) view.findViewById(R.id.first_list_fragment_item_content_tesxt);
+            viewHolder.textView = (TextView) view.findViewById(R.id.content_text);
 
             view.setTag(viewHolder);
         } else {
